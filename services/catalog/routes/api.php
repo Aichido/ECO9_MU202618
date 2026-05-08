@@ -10,6 +10,7 @@ Route::get('/formations',                   [FormationController::class, 'index'
 Route::get('/formations/{formation}',       [FormationController::class, 'show']);
 Route::get('/formations/{formation}/modules', [ModuleController::class, 'index']);
 Route::get('/formations/{formationId}/logs', [ActivityLogController::class, 'getByFormation']);
+Route::get('/formations/{id}', [FormationController::class, 'show']);
 
 // Routes privées — token validé via le service Auth
 Route::middleware('auth.service')->group(function (): void {
@@ -17,7 +18,7 @@ Route::middleware('auth.service')->group(function (): void {
     Route::post('/formations',                 [FormationController::class, 'store']);
     Route::put('/formations/{formation}',      [FormationController::class, 'update']);
     Route::delete('/formations/{formation}',   [FormationController::class, 'destroy']);
-
+    Route::post('/formations/{id}/noter',       [RatingController::class, 'noter']);
     Route::post('/formations/{formation}/modules', [ModuleController::class, 'store']);
     Route::put('/modules/{module}',            [ModuleController::class, 'update']);
     Route::delete('/modules/{module}',         [ModuleController::class, 'destroy']);

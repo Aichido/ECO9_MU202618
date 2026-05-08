@@ -8,14 +8,27 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Formation;
 use App\Models\Module;
 use App\Services\MongoActivityLogger;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use App\Http\Controllers\RatingController;
 
 class FormationController extends Controller
 {
+    public function show($id)
+    {
+        // Récupération de la formation (depuis ta BDD ou un autre service)
+        $formation = Formation::findOrFail($id);   // Exemple avec modèle Formation existant
+        $data = $formation->toArray();
+
+        // Enrichissement
+        $data = RatingController::enrichirAvecNotes($id, $data);
+
+        return response()->json($data);
+    }
     public function __construct(private MongoActivityLogger $mongoLogger)
     {
     }

@@ -1,4 +1,4 @@
-name: CI/CD Pipeline - SkillHub BC03
+name: CI/CD Pipeline - SkillHub
 
 on:
   push:
@@ -93,7 +93,7 @@ jobs:
         with:
           name: couverture-auth
           path: services/auth/coverage.xml
- 
+
   # ==========================================
   # Job 4: Tests Service Catalog
   # ==========================================
@@ -193,7 +193,7 @@ jobs:
           path: services/inscription
 
       - name: Analyse avec SonarCloud
-        uses: SonarSource/sonarcloud-github-action@v3
+        uses: SonarSource/sonarcloud-github-action@master   # ← corrigé (était @v3)
         with:
           projectBaseDir: .
         env:
