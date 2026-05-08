@@ -2,7 +2,7 @@
 
 > Projet : Plateforme de gestion de formations en ligne  
 > Stack : Laravel 11 (API REST) + React 18 (Vite) + MySQL + MongoDB (logs optionnels)  
-> Date de rédaction : 14 avril 2026
+
 
 ---
 
