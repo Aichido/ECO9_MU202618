@@ -15,7 +15,8 @@ function Sidebar() {
   const gererDeconnexion = async () => {
     try {
       await deconnecter();
-    } catch { /* ignore */ } finally {
+    } catch {
+    } finally {
       supprimerSession();
       navigate("/", { replace: true });
     }

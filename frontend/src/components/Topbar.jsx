@@ -21,14 +21,14 @@ function Topbar() {
     const themeInitial = themeSauvegarde === "dark" ? "dark" : "light";
 
     setTheme(themeInitial);
-    document.documentElement.dataset.theme = themeInitial;
+    document.documentElement.setAttribute("data-theme", themeInitial);
   }, []);
 
   const basculerTheme = () => {
     const prochainTheme = theme === "dark" ? "light" : "dark";
     setTheme(prochainTheme);
     localStorage.setItem("theme-dashboard", prochainTheme);
-    document.documentElement.dataset.theme = prochainTheme;
+    document.documentElement.setAttribute("data-theme", prochainTheme);
   };
 
   const gererRetour = () => {
@@ -43,7 +43,8 @@ function Topbar() {
   const gererDeconnexion = async () => {
     try {
       await deconnecter();
-    } catch { /* ignore */ } finally {
+    } catch {
+    } finally {
       supprimerSession();
       navigate("/", { replace: true });
     }

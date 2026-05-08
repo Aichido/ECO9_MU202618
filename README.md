@@ -71,7 +71,7 @@ Objectifs Bloc 03 : industrialisation, conteneurisation, automatisation, quali
 
 - CRUD formations, modules, recherche filtrée
 - Attribution des formations aux formateurs
-- Gestion des statuts, catégories, niveaux, durée
+- Gestion des statuts, catégories, niveaux, durée, prix
 
 ### Inscriptions
 
@@ -100,15 +100,14 @@ Objectifs Bloc 03 : industrialisation, conteneurisation, automatisation, quali
 ## 4. Structure du dépôt
 
 ```
-/frontend                   # Application React.js (Vite)
-/services/auth              # Microservice Authentification (Laravel)
-/services/auth-spring-boot  # Microservice Authentification (Spring boot)
-/services/catalog           # Microservice Catalogue (Laravel)
-/services/inscription       # Microservice Inscriptions (Laravel)
-/docker-compose.yml         # Orchestration multi-conteneurs
+/frontend                # Application React.js (Vite)
+/services/auth           # Microservice Authentification (Laravel)
+/services/catalog        # Microservice Catalogue (Laravel)
+/services/inscription    # Microservice Inscriptions (Laravel)
+/docker-compose.yml      # Orchestration multi-conteneurs
 /DOCUMENTATION_TECHNIQUE.md # Doc technique détaillée
-/contributing.md            # Guide de contribution
-/sonar-project.properties   # Configurtion SonarCloud
+/contributing.md        # Guide de contribution
+/sonar-project.properties# Configurtion SonarCloud
 ```
 
 Chaque microservice contient :
@@ -127,8 +126,8 @@ Chaque microservice contient :
 ### Clonage & lancement
 
 ```sh
-git clone https://github.com/Andrimirana/Skillhub.git
-cd Skillhub_V2
+git clone https://github.com/Andrimirana/skillhub-groupe-BC03.git
+cd skillhub-groupe-BC03
 docker compose up -d
 ```
 

@@ -1,16 +1,16 @@
-import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import "../styles/searchbar.css";
 
-// Barre de recherche
+//barre de recherche
 function Searchbar({ search, setSearch }) {
   return (
     <div className="search-container">
-      <label htmlFor="search-input">
+      <label htmlFor="search-input"> {/* label */ }
         Rechercher une formation
       </label>
-      <div className="search-field">
+
+      <div className="search-field">{/* champ de recherche */}
         <FontAwesomeIcon icon={faSearch} aria-hidden="true" />
         <input
           id="search-input"
@@ -23,10 +23,5 @@ function Searchbar({ search, setSearch }) {
     </div>
   );
 }
-
-Searchbar.propTypes = {
-  search: PropTypes.string.isRequired,
-  setSearch: PropTypes.func.isRequired,
-};
 
 export default Searchbar;

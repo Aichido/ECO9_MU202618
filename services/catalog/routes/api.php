@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\ActivityLogController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\ModuleController;
 use Illuminate\Support\Facades\Route;
@@ -9,7 +8,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/formations',                   [FormationController::class, 'index']);
 Route::get('/formations/{formation}',       [FormationController::class, 'show']);
 Route::get('/formations/{formation}/modules', [ModuleController::class, 'index']);
-Route::get('/formations/{formationId}/logs', [ActivityLogController::class, 'getByFormation']);
 
 // Routes privées — token validé via le service Auth
 Route::middleware('auth.service')->group(function (): void {

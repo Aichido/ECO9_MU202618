@@ -1,7 +1,6 @@
-import PropTypes from "prop-types";
 import "../styles/table.css";
 
-// Table des formations du tableau de bord
+//table contient les formations
 function Table({ formations, onDelete, onEdit, onView, mode }) {
   const formatterPrix = new Intl.NumberFormat("fr-FR", {
     minimumFractionDigits: 2,
@@ -45,10 +44,16 @@ function Table({ formations, onDelete, onEdit, onView, mode }) {
                   <button type="button" className="btn-secondary" onClick={() => onView?.(formation)}>
                     Voir détail
                   </button>
+
                   <button type="button" className="btn-edit" onClick={() => onEdit?.(formation)}>
                     Modifier
                   </button>
-                  <button type="button" className="btn-delete" onClick={() => onDelete(formation.id)}>
+
+                  <button
+                    type="button"
+                    className="btn-delete"
+                    onClick={() => onDelete(formation.id)}
+                  >
                     Supprimer
                   </button>
                 </>
@@ -68,22 +73,5 @@ function Table({ formations, onDelete, onEdit, onView, mode }) {
     </table>
   );
 }
-
-Table.propTypes = {
-  formations: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
-    titre: PropTypes.string,
-    statut: PropTypes.string,
-    date: PropTypes.string,
-    price: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    duration: PropTypes.number,
-    level: PropTypes.string,
-    apprenants: PropTypes.number,
-  })).isRequired,
-  onDelete: PropTypes.func,
-  onEdit: PropTypes.func,
-  onView: PropTypes.func,
-  mode: PropTypes.string,
-};
 
 export default Table;

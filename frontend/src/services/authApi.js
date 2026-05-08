@@ -36,7 +36,7 @@ export async function connecter(email, motDePasse) {
 }
 
 export async function profilConnecte() {
-  const reponse = await apiAuth.get("/profile");
+  const reponse = await apiAuth.get("/profil");
   return reponse.data;
 }
 
